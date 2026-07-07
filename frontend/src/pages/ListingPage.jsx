@@ -30,7 +30,15 @@ const ListingPage = () => {
         
         if (!response.ok) throw new Error('Failed to fetch listing data');
         
+        // const data = await response.json();
         const data = await response.json();
+
+// Force overwrite the broken second image slot right here
+if (data && data.images && data.images.length > 1) {
+  data.images[1] = "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+}
+
+setListing(data);
         setListing(data);
       } catch (err) {
         console.error(err);

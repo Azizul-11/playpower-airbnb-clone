@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-airbnb-brand: #FF385C;
+  --color-airbnb-dark: #222222;
+  --color-airbnb-light: #717171;
+  --color-airbnb-border: #DDDDDD;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --shadow-airbnb: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+body {
+  color: var(--color-airbnb-dark);
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+}

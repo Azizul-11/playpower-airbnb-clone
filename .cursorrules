@@ -1,0 +1,20 @@
+# Playpower Labs Airbnb-Clone Architecture & Style Rules
+
+Objective: Build a pixel-perfect, highly responsive Airbnb Listing Page clone with behavioral and visual parity, using React (Vite, JSX, Tailwind CSS, Framer Motion) and a Node.js/Express backend with Groq Cloud AI integration.
+
+## 1. Code Quality & LLD Principles
+- Write clean, modular, atomic functional components in JSX.
+- Follow a strict separation of concerns: Presentational components must rely completely on props; orchestrator/page components handle state.
+- Strictly adhere to SOLID principles. Keep components highly cohesive and loosely coupled.
+- Ensure all custom interaction patterns (modals, dropdowns, galleries) manage focus properly and support keyboard navigation (Esc to close, Arrow keys for gallery sliding).
+
+## 2. Styling & Motion (Tailwind + Framer Motion)
+- Maintain absolute pixel perfection against standard Airbnb design specs (exact padding, text-sizes, border radii, and smooth hover scales).
+- For animations (Image Lightbox, Sticky Header transitions, View Tour), use Framer Motion explicitly. Keep transitions crisp and natural (e.g., easeInOut, durations between 0.2s and 0.35s).
+- Avoid inline styles. Use Tailwind utility classes natively.
+
+## 3. Backend & AI Service Architecture
+- The backend must follow a clean Controller-Route-Service pattern using Express.
+- Centralize the Groq SDK initialization inside a dedicated config utility.
+- All AI endpoints must use appropriate streaming or fast-token processing to keep response latencies under 400ms.
+- Ensure environment variables are loaded robustly via dotenv with clear fallback logging.
